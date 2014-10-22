@@ -9,7 +9,15 @@
 		#Time{width:109px;height:30px;left:347px;top:235px;font-size:16px;color:#fff;}
 		#Date{width:109px;height:30px;left:547px;top:235px;font-size:16px;color:#fff;}
     </style>
-    <script>
+</head>
+<body>
+	<div class="ErrorContent" style="width:1000px;margin:auto;text-align:center;position:relative;">
+		<img src="error.gif"/>
+        <div id="Word">404&nbsp;NO FOUND!</div>
+		<div id="Time">00:00:00</div>
+        <div id="Date">0000-00-00</div>
+	</div>
+<script>
     	Date.prototype.format = function(format){
             var o = {
             "M+" : this.getMonth()+1, //month
@@ -28,21 +36,13 @@
             ("00"+ o[k]).substr((""+ o[k]).length));
             return format;
         }
-		setInterval(function(){
-			var time = new Date().format("hh:mm:ss");
-			var date = new Date().format("yyyy-MM-dd");
-			document.getElementById("Time").innerHTML=time;
-			document.getElementById("Date").innerHTML=date;
-		},1000);
-	</script>
-</head>
-<body>
-	<div class="ErrorContent" style="width:1000px;margin:auto;text-align:center;position:relative;">
-		<img src="error.gif"/>
-        <div id="Word">404&nbsp;NO FOUND!</div>
-		<div id="Time">00:00:00</div>
-        <div id="Date">0000-00-00</div>
-	</div>
+	setInterval(function(){
+		var time = new Date().format("hh:mm:ss");
+		var date = new Date().format("yyyy-MM-dd");
+		document.getElementById("Time").innerHTML=time;
+		document.getElementById("Date").innerHTML=date;
+	},1000);
+</script>
 </body>
 </html>
 <!-- via OSCTools.NET -->
