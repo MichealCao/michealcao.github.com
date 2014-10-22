@@ -36,11 +36,17 @@
             ("00"+ o[k]).substr((""+ o[k]).length));
             return format;
         }
-	setInterval(function(){
-		var time = new Date().format("hh:mm:ss");
+        
+        function showTimes(){
+        	var time = new Date().format("hh:mm:ss");
 		var date = new Date().format("yyyy-MM-dd");
 		document.getElementById("Time").innerHTML=time;
 		document.getElementById("Date").innerHTML=date;
+        }
+        
+        showTimes();
+	setInterval(function(){
+		showTimes();
 	},1000);
 </script>
 </body>
